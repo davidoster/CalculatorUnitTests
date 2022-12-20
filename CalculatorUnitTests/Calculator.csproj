@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArithmeticCalculations.cs" />
-    <Compile Include="IArithmeticCalculations.cs" />
+    <Compile Include="Models\ArithmeticCalculations.cs" />
+    <Compile Include="Models\IArithmeticCalculations.cs" />
+    <Compile Include="Models\INumberValidator.cs" />
+    <Compile Include="Models\NumberValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
