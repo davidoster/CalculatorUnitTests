@@ -10,7 +10,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            ArithmeticCaclulations arithmeticCaclulations = new ArithmeticCaclulations();
+            ArithmeticCalculations arithmeticCaclulations = new ArithmeticCalculations();
             arithmeticCaclulations.Add(1, 1);
             arithmeticCaclulations.Subtract(1, 1);
             arithmeticCaclulations.Multiply(1, 1);

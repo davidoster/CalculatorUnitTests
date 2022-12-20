@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public class ArithmeticCaclulations : IArithmeticCalculations
+    public class ArithmeticCalculations : IArithmeticCalculations
     {
         public int Add(int number1, int number2)
         {

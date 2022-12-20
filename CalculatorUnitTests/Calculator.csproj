@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArithmeticCaclulations.cs" />
+    <Compile Include="ArithmeticCalculations.cs" />
     <Compile Include="IArithmeticCalculations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
