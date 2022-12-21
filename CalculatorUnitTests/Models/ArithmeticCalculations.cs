@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CalculatorUnitTests;
+using CalculatorUnitTests.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +8,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.Models
 {
-    // ArithmeticOperationValidator
-    // get the 1st number <--- NumberValidator
-    // get the 2nd number <--- NumberValidator
-    // get the operation  <--- OperationValidator
-    // check that these(the above) are valid in all cases so proceed wit the operation 
+    
     public class ArithmeticCalculations : IArithmeticCalculations
     {
         private IArithmeticOperationValidator _arithmeticOperationValidator;
@@ -24,6 +22,7 @@ namespace Calculator.Models
         public ArithmeticCalculations(INumberValidator numberValidator)
         {
             _numberValidator = numberValidator;
+            _arithmeticOperationValidator = new ArithmeticOperationValidator();
         }
 
         public int Add(int number1, int number2)
@@ -44,32 +43,38 @@ namespace Calculator.Models
             }
         }
 
-        public int Divide(int number1, int number2)
+        public int? Divide(int number1, int number2)
         {
-            if(number2 == 0)
+            _arithmeticOperationValidator.Validate(number1, number2, ArithmeticOperations.DIVIDE);
+            if (_arithmeticOperationValidator.State == true)
             {
-                throw new DivideByZeroException(); // new Exception();
+                return number1 / number2;
             }
-            try
-            {
-                _numberValidator.Value = number1;
-                int n1 = _numberValidator.Value;
+            return null;
+            //if(number2 == 0)
+            //{
+            //    throw new DivideByZeroException(); // new Exception();
+            //}
+            //try
+            //{
+            //    _numberValidator.Value = number1;
+            //    int n1 = _numberValidator.Value;
 
-                _numberValidator.Value = number2;
-                int n2 = _numberValidator.Value;
+            //    _numberValidator.Value = number2;
+            //    int n2 = _numberValidator.Value;
 
-                return n1 / n2;
-            }
-            catch (DivideByZeroException e)
-            {
-                throw new Exception(e.Message);
-            }
-            catch (Exception e)
-            {
+            //    return n1 / n2;
+            //}
+            //catch (DivideByZeroException e)
+            //{
+            //    throw new Exception(e.Message);
+            //}
+            //catch (Exception e)
+            //{
 
-                throw new Exception(e.Message);
-            }
-            
+            //    throw new Exception(e.Message);
+            //}
+
         }
 
         public int Multiply(int number1, int number2)
@@ -77,9 +82,14 @@ namespace Calculator.Models
             return number1 * number2;
         }
 
-        public int Subtract(int number1, int number2)
+        public int? Subtract(int number1, int number2)
         {
-            return number1 - number2;
+            _arithmeticOperationValidator.Validate(number1, number2, ArithmeticOperations.SUBTRACT);
+            if(_arithmeticOperationValidator.State == true)
+            {
+                return number1 - number2;
+            }
+            return null;
         }
     }
 }
