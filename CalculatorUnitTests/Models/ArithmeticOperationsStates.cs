@@ -1,4 +1,4 @@
-﻿namespace CalculatorUnitTests
+﻿namespace Calculator.Models
 {
     public enum ArithmeticOperationsStates
     {

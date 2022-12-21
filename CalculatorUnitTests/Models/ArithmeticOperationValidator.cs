@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorUnitTests.Models
+namespace Calculator.Models
 {
     // ArithmeticOperationValidator (State Of an operation)
     // get the 1st number <--- NumberValidator

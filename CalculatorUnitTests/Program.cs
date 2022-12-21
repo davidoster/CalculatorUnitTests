@@ -1,5 +1,4 @@
 ﻿using Calculator.Models;
-using CalculatorUnitTests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +11,21 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            ArithmeticCalculations arithmeticCaclulations = new ArithmeticCalculations(new NumberValidator());
-
+            ArithmeticCalculations arithmeticCalculations = new ArithmeticCalculations(1);
             //NumberValidator.Precision = 1;
-            //Console.WriteLine(arithmeticCaclulations.Add(-int.MaxValue, -int.MaxValue));
-            arithmeticCaclulations.Subtract(1, 1);
-            arithmeticCaclulations.Multiply(1, 1);
-            arithmeticCaclulations.Divide(22, 0);
-            //arithmeticCaclulations.DoOperation(1, 2, ArithmeticOperations.ADD);
+            //Console.WriteLine(arithmeticCalculations.Add(-int.MaxValue, -int.MaxValue));
+            Console.WriteLine(arithmeticCalculations.Subtract(1, 1));
+            //arithmeticCalculations.Multiply(1, 1);
+            //arithmeticCaclulations.Divide(22, 0);
+            Console.WriteLine(
+                $"Add(11,11)=" +
+                $"{arithmeticCalculations.DoOperation(11, 11, ArithmeticOperations.ADD)}" +
+                $"\nSubtract(11,11)=" +
+                $"{arithmeticCalculations.DoOperation(11, 11, ArithmeticOperations.SUBTRACT)}" +
+                $"\nMultiply(11,11)=" +
+                $"{arithmeticCalculations.DoOperation(11, 11, ArithmeticOperations.MULTIPLY)}" +
+                $"\nDivide(11,1)=" +
+                $"{arithmeticCalculations.DoOperation(11, 1, ArithmeticOperations.DIVIDE)}");
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using CalculatorUnitTests;
-
-namespace Calculator.Models
+﻿namespace Calculator.Models
 {
     public interface IArithmeticOperationValidator //: INumberValidator
     {

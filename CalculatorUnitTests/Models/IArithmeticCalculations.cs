@@ -8,6 +8,7 @@ namespace Calculator.Models
 {
     internal interface IArithmeticCalculations
     {
+        int? DoOperation(int number1, int number2, ArithmeticOperations arithmeticOperations);
         int? Add(int number1, int number2);
         int? Subtract(int number1, int number2);
         int? Multiply(int number1, int number2);
