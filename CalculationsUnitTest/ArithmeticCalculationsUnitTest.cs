@@ -12,24 +12,25 @@ namespace CalculationsUnitTest
         public ArithmeticCalculationsUnitTest()
         {
             Console.WriteLine("Tests are about to Start!");
-            calculations = new ArithmeticCalculations(new NumberValidator());
+            calculations = new ArithmeticCalculations(new NumberValidator(1));
         }
         
         [TestMethod]
         public void AddSingleDigitsTest()
         {
-            int result = calculations.Add(1, 1);
+            int? result = calculations.Add(1, 1);
             int expectedResult = 2;
             Assert.AreEqual(expectedResult, result);
 
         }
 
         [TestMethod]
-        public void AddDoubleDigitsTest()
+        public void AddDoubleDigitsWithPrecision1Test()
         {
-            int result = calculations.Add(11, 11);
-            int expectedResult = 22;
-            Assert.AreEqual(expectedResult, result);
+            //int? result = calculations.Add(11, 11);
+            Assert.ThrowsException<Exception>(() => calculations.Add(11, 11));
+            //int? expectedResult = null;
+            //Assert.AreEqual(expectedResult, result);
 
         }
 
@@ -81,7 +82,7 @@ namespace CalculationsUnitTest
         public void DivideByZeroTest()
         {
             Assert.ThrowsException<Exception>(
-                () => calculations.Divide(22, 0));
+                () => calculations.Divide(2, 0));
         }
     }
 }
