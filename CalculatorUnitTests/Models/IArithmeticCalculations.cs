@@ -8,9 +8,9 @@ namespace Calculator.Models
 {
     internal interface IArithmeticCalculations
     {
-        int Add(int number1, int number2);
+        int? Add(int number1, int number2);
         int? Subtract(int number1, int number2);
-        int Multiply(int number1, int number2);
+        int? Multiply(int number1, int number2);
         int? Divide(int number1, int number2);
     }
 }

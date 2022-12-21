@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Models\ArithmeticCalculations.cs" />
     <Compile Include="Models\ArithmeticOperations.cs" />
+    <Compile Include="Models\ArithmeticOperationsStates.cs" />
     <Compile Include="Models\ArithmeticOperationValidator.cs" />
     <Compile Include="Models\IArithmeticCalculations.cs" />
     <Compile Include="Models\IArithmeticOperationValidator.cs" />

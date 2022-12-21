@@ -4,7 +4,7 @@ namespace Calculator.Models
 {
     public interface IArithmeticOperationValidator //: INumberValidator
     {
-        bool State { get; }
+        ArithmeticOperationsStates State { get; }
         void Validate(int number1, int number2, ArithmeticOperations operation);
     }
 }

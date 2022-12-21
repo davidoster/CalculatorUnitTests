@@ -17,7 +17,7 @@ namespace CalculatorUnitTests.Models
     {
         //public int Number1;
         //public int Number2;
-        public bool State { private set; get; } // Enum
+        public ArithmeticOperationsStates State { private set; get; } // Enum
         public int Result;
 
         public ArithmeticOperationValidator()
@@ -44,24 +44,24 @@ namespace CalculatorUnitTests.Models
                 switch (operation)
                 {
                     case ArithmeticOperations.ADD:
-                        State = true;
+                        State = ArithmeticOperationsStates.OK;
                         break;
                     case ArithmeticOperations.SUBTRACT:
-                        State = true;
+                        State = ArithmeticOperationsStates.OK;
                         break;
                     case ArithmeticOperations.DIVIDE:
                         if (number2Validator.Value != 0)
                         {
-                            State = true;
+                            State = ArithmeticOperationsStates.OK;
                         }
                         else
                         {
-                            State = false;
+                            State = ArithmeticOperationsStates.NUMBER2NOTVALIDDIVISIONBYZERO;
                             throw new Exception("Number2 is not allowed to be zero");
                         }
                         break;
                     case ArithmeticOperations.MULTIPLY:
-                        State = true;
+                        State = ArithmeticOperationsStates.OK;
                         break;
                 }
             }
