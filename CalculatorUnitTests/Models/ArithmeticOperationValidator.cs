@@ -39,8 +39,8 @@ namespace CalculatorUnitTests.Models
             number2Validator.Value = number2;
             try
             {
-                // operation
-                //Add(number1Validator.Value, number2Validator.Value);
+                int number = number1Validator.Value;
+                number = number2Validator.Value;
                 switch (operation)
                 {
                     case ArithmeticOperations.ADD:
